@@ -71,7 +71,7 @@ class _UserDashboardState extends State<UserDashboard> {
               )
             ),
             Positioned(
-                top: 60,
+                top: 110,
                 right: 0,
                 left: 0,
                 child:
@@ -86,8 +86,156 @@ class _UserDashboardState extends State<UserDashboard> {
                       child: Text(formattedDate,textAlign: TextAlign.center,
                           style: TextStyles.instance.textMedium.copyWith(fontSize: 15,color: Colors.grey)),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 40,),
+                    ElevatedButton(
+                        child: Container(
+                          height: context.screenheight/5 ,
+                          width: context.screenWidth-50,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10,),
 
+                              Container(
+                                height: context.screenheight/10 ,
+                                width: context.screenWidth/5,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: Image.asset("assets/images/loginregister.png").image,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              Spacer(),
+                              Row(
+                                children: [
+                                  SizedBox(width: 8,),
+
+                                  Text(
+                                      "GPS Map".toUpperCase(),
+                                      style: TextStyle(fontSize: 14)
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 30,),
+
+                            ],
+                          ),
+                        ),
+                        style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    side: BorderSide(color: Colors.red)
+                                )
+                            )
+                        ),
+                        onPressed: () => null
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                            child: Container(
+                              height: context.screenheight/5 ,
+                              width: context.screenWidth/2.6,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 10,),
+
+                                  Container(
+                                    height: context.screenheight/10 ,
+                                    width: context.screenWidth/5,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: Image.asset("assets/images/loginregister.png").image,
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 8,),
+
+                                      Text(
+                                          "Device Info".toUpperCase(),
+                                          style: TextStyle(fontSize: 14)
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 30,),
+
+                                ],
+                              ),
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                        side: BorderSide(color: Colors.red)
+                                    )
+                                )
+                            ),
+                            onPressed: () => null
+                        ),
+
+                        ElevatedButton(
+                            child: Container(
+                              height: context.screenheight/5 ,
+                              width: context.screenWidth/2.6,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 10,),
+
+                                  Container(
+                                    height: context.screenheight/10 ,
+                                    width: context.screenWidth/5,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: Image.asset("assets/images/loginregister.png").image,
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 8,),
+
+                                      Text(
+                                          "TimeStamp Camera".toUpperCase(),
+                                          style: TextStyle(fontSize: 14)
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 30,),
+
+                                ],
+                              ),
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                        side: BorderSide(color: Colors.red)
+                                    )
+                                )
+                            ),
+                            onPressed: () => null
+                        ),
+
+                      ],
+                    )
                   ],
                 )
             ),
