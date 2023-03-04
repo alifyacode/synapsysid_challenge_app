@@ -8,6 +8,8 @@ class ColorsApp {
     return _instance!;
    }
 
+
+   Color get darkBlue => Colors.indigo;
    Color get primaryColor => Colors.deepPurple.shade400;
    Color get secundaryColor => Colors.white;
    Color get grey => Colors.grey.shade600;

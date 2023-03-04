@@ -2,22 +2,12 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:synapsysid_challenge_app/src/core/ui/widgets/custom_button.dart';
-import 'package:synapsysid_challenge_app/src/feature/home/home_controller.dart';
-import 'package:provider/provider.dart';
+import 'package:synapsysid_challenge_app/src/core/ui/helpers/size_helpers.dart';
 
 
-import 'package:flutter/material.dart';
-import 'package:synapsysid_challenge_app/src/core/dto/global_user.dart';
-import 'package:synapsysid_challenge_app/src/core/ui/widgets/custom_button.dart';
-import 'package:synapsysid_challenge_app/src/feature/Auth/auth_page.dart';
-import 'package:synapsysid_challenge_app/src/feature/home/home_controller.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../core/ui/base_state/base_state.dart';
 import '../../core/ui/styles/text_styles.dart';
-import '../Auth/auth_controller.dart';
+
 
 
 class UserDashboard extends StatefulWidget {
@@ -28,9 +18,9 @@ class UserDashboard extends StatefulWidget {
 }
 
 class _UserDashboardState extends State<UserDashboard> {
-  String formattedTime = DateFormat('kk:mm').format(DateTime.now());
-  String hour = DateFormat('a').format(DateTime.now());
+  // String formattedTime = DateFormat('kk:mm').format(DateTime.now());
   late Timer _timer;
+  String formattedDate = DateFormat("EEE dd MMM HH:mm").format(DateTime.now().toLocal());
 
   @override
   void initState() {
@@ -40,37 +30,70 @@ class _UserDashboardState extends State<UserDashboard> {
 
   void _update() {
     setState(() {
-      formattedTime = DateFormat('kk:mm').format(DateTime.now());
-      hour = DateFormat('a').format(DateTime.now());
+      // formattedTime = DateFormat('kk:mm').format(DateTime.now());
+      formattedDate = DateFormat("EEE dd MMM HH:mm").format(DateTime.now().toLocal());
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(formattedTime,  style: TextStyles.instance.textBold.copyWith(fontSize: 20),),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 41.0, left: 10.0),
-                    child: Text(
-                      hour,
-                      style:
-                      TextStyles.instance.textBold.copyWith(fontSize: 20),                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+
+      appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        // bottomOpacity: 0.0,
+        elevation: 0.0,
+        leading: Icon(Icons.more_vert),
+        // title: Text('BelajarFlutter.com'),
+        actions: <Widget>[
+          IconButton(icon: new Icon(Icons.info_rounded, color: Colors.white), onPressed: () {  },),
         ],
       ),
-    );
-  }
+      body: Container(
+        height: context.screenheight ,
+        width: context.screenWidth,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              right: 0,
+              left: 0,
+              child:
+              Container(
+                height: context.screenheight /8 ,
+                width: context.screenWidth*2,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: Image.asset("assets/images/wave.png").image,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              )
+            ),
+            Positioned(
+                top: 60,
+                right: 0,
+                left: 0,
+                child:
+                Column(
+                  children: [
+                    Center(
+                      child: Text("SynapsysId\nChallenge",textAlign: TextAlign.center,
+                          style: TextStyles.instance.textBold.copyWith(fontSize: 35,)),
+                    ),
+                    SizedBox(height: 10,),
+                    Center(
+                      child: Text(formattedDate,textAlign: TextAlign.center,
+                          style: TextStyles.instance.textMedium.copyWith(fontSize: 15,color: Colors.grey)),
+                    ),
+                    SizedBox(height: 10,),
+
+                  ],
+                )
+            ),
+
+          ],
+        ),
+      ),
+    );  }
 }
