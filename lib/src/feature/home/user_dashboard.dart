@@ -20,14 +20,14 @@ import '../../core/ui/styles/text_styles.dart';
 import '../Auth/auth_controller.dart';
 
 
-class Clock extends StatefulWidget {
-  const Clock({Key? key}) : super(key: key);
+class UserDashboard extends StatefulWidget {
+  const UserDashboard({Key? key}) : super(key: key);
 
   @override
-  _ClockState createState() => _ClockState();
+  _UserDashboardState createState() => _UserDashboardState();
 }
 
-class _ClockState extends State<Clock> {
+class _UserDashboardState extends State<UserDashboard> {
   String formattedTime = DateFormat('kk:mm').format(DateTime.now());
   String hour = DateFormat('a').format(DateTime.now());
   late Timer _timer;

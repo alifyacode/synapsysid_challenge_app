@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:synapsysid_challenge_app/src/core/dto/global_user.dart';
 import 'package:synapsysid_challenge_app/src/core/ui/widgets/custom_button.dart';
 import 'package:synapsysid_challenge_app/src/feature/Auth/auth_page.dart';
-import 'package:synapsysid_challenge_app/src/feature/home/clock.dart';
+import 'package:synapsysid_challenge_app/src/feature/home/user_dashboard.dart';
 import 'package:synapsysid_challenge_app/src/feature/home/home_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -55,7 +55,7 @@ class _HomePageState extends BaseState<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: isLogged == true
-          ? Clock()
+          ? UserDashboard()
       // UserLoggedWidget(user: (HomeController.userLogged))
           : AuthPage()
     );
