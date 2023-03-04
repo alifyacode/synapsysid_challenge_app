@@ -4,7 +4,7 @@ import 'package:synapsysid_challenge_app/src/feature/Auth/auth_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/Register/register_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/home/home_page.dart';
 import 'core/ui/theme/theme_config.dart';
-import 'feature/device_info_page.dart';
+import 'feature/DeviceInfo/device_info_page.dart';
 
 
 class App extends StatelessWidget {

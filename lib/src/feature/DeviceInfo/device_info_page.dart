@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
-import '../core/ui/styles/colors_app.dart';
-import '../core/ui/widgets/back_arrow.dart';
+import '../../core/ui/styles/colors_app.dart';
+import '../../core/ui/widgets/back_arrow.dart';
 
 
 class DeviceInfoPage extends StatefulWidget {
