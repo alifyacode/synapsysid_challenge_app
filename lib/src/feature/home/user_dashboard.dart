@@ -124,11 +124,11 @@ class _UserDashboardState extends State<UserDashboard> {
                         ),
                         style: ButtonStyle(
                             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                            backgroundColor: MaterialStateProperty.all<Color>(Color(
+                                0xff7c59c3)),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5.0),
-                                    side: BorderSide(color: Colors.red)
                                 )
                             )
                         ),
@@ -175,11 +175,11 @@ class _UserDashboardState extends State<UserDashboard> {
                             ),
                             style: ButtonStyle(
                                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                                backgroundColor: MaterialStateProperty.all<Color>(Color(
+                                    0xff7c59c3)),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(5.0),
-                                        side: BorderSide(color: Colors.red)
                                     )
                                 )
                             ),
@@ -223,11 +223,10 @@ class _UserDashboardState extends State<UserDashboard> {
                             ),
                             style: ButtonStyle(
                                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                backgroundColor: MaterialStateProperty.all<Color>(Color(
+                                    0xff7c59c3)),                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(5.0),
-                                        side: BorderSide(color: Colors.red)
                                     )
                                 )
                             ),
