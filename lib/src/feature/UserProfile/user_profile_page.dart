@@ -42,7 +42,7 @@ class UserProfilePage extends StatelessWidget {
                 Text('phone: ${user['phone']}', style: TextStyles.instance.textBold.copyWith(fontSize: 20),),
                 Text('email: ${user['email']}', style: TextStyles.instance.textBold.copyWith(fontSize: 20),),
                 SizedBox(height: 20.0,),
-                CustomButton(label:  'Sign out', width: context.screenWidth,onPressed: () {controller.signOut(); AuthPage();},),
+                CustomButton(label:  'Sign out', width: context.screenWidth,onPressed: () {controller.signOut(); Navigator.of(context).pushReplacementNamed("/auth");},),
                 SizedBox(height: 100.0,),
               ],
             ),
