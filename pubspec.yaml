@@ -46,6 +46,7 @@ dependencies:
   intl: ^0.17.0
   sensors_plus: ^2.0.2
   geolocator: ^9.0.2
+  battery_plus: ^3.0.3
 
 dev_dependencies:
   flutter_test:

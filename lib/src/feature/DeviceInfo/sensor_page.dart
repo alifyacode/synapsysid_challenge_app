@@ -50,7 +50,7 @@ class _SensorPageState extends State<SensorPage> {
           ),
         ),
 
-        title: const Text('Sensor Page'),
+        title: const Text('Sensor States Page'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

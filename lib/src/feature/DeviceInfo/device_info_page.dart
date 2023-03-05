@@ -228,7 +228,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
                                   )
                               )
                           ),
-                          onPressed: () => null
+                          onPressed: () => Navigator.of(context).popAndPushNamed('/batterylevel')
                       ),
                       SizedBox(height: 40,),
 
