@@ -8,6 +8,7 @@ import 'package:synapsysid_challenge_app/src/feature/home/home_page.dart';
 import 'core/ui/theme/theme_config.dart';
 import 'feature/DeviceInfo/battery_level_page.dart';
 import 'feature/DeviceInfo/device_info_page.dart';
+import 'feature/GPSMap/gps_map_page.dart';
 
 
 class App extends StatelessWidget {
@@ -27,6 +28,7 @@ class App extends StatelessWidget {
           '/deviceinfo':(context) => DeviceInfoPage(),
           '/sensorstate':(context) => SensorPage(),
           '/gpscoordinate':(context) => GpsCoordinatePage(),
+          '/gpsmap':(context) => GpsMapPage(),
           '/batterylevel':(context) => BatteryLevelPage()
         },
         theme: ThemeConfig.theme

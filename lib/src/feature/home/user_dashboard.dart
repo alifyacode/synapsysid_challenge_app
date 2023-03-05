@@ -138,7 +138,7 @@ class _UserDashboardState extends State<UserDashboard> {
                                 )
                             )
                         ),
-                        onPressed: () => null
+                        onPressed: () => Navigator.of(context).popAndPushNamed('/gpsmap')
                     ),
                     SizedBox(height: 20,),
                     Row(

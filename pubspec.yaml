@@ -48,6 +48,12 @@ dependencies:
   geolocator: ^9.0.2
   battery_plus: ^3.0.3
   device_info: ^0.4.0+4
+  trust_location: ^2.0.13
+  flutter_map: ^2.2.0
+  latlong2: ^0.8.1
+  location: ^4.4.0
+  cached_network_image: ^3.2.1
+  geocoding: ^2.0.4
 
 dev_dependencies:
   flutter_test:
