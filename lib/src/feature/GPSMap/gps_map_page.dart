@@ -214,7 +214,7 @@ class _GpsMapPageState extends State<GpsMapPage> {
               Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    height: screenSize.height / 4,
+                    height: screenSize.height / 3.6,
                     width: double.infinity,
                     padding: const EdgeInsets.all(15),
                     margin:
@@ -244,7 +244,7 @@ class _GpsMapPageState extends State<GpsMapPage> {
                         isLoading
                             ? const Text("Sedang mencari lokasi ...")
                             : Text(
-                            "Lokasi anda adalah \n: Lat : $_latitude \nLong : $_longitude"),
+                            "Lokasi anda adalah:\n Lat : $_latitude \nLong : $_longitude"),
                         Text("Alamat : \n" + _address.toString(),
                             textAlign: TextAlign.center),
                         const SizedBox(height: 20),
@@ -264,7 +264,7 @@ class _GpsMapPageState extends State<GpsMapPage> {
                               icon: const Icon(Icons.my_location_outlined),
                               label: const Padding(
                                 padding: EdgeInsets.all(15.0),
-                                child: Text("Refres Lokasi",
+                                child: Text("Refresh Lokasi",
                                     style: TextStyle(fontSize: 16)),
                               )),
                         )
