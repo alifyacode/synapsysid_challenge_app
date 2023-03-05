@@ -26,14 +26,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
     return SafeArea(
       child: Scaffold(
 
-        // appBar: AppBar(
-        //   elevation: 0.0,
-        //   leading: Container(
-        //     width: 100,
-        //       child: 
-        //       BackArrow(route: '/',color: Colors.white,)),
-        //   // title: Text('BelajarFlutter.com'),
-        // ),
+
         body: Container(
           height: context.screenheight ,
           width: context.screenWidth,

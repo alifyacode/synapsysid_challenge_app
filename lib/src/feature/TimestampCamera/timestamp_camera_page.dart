@@ -87,10 +87,22 @@ class _TimestampCameraPageState extends State<TimestampCameraPage> {
               right: 0,
               left: 0,
               child:
-            image != null ? Image.file(image!) : SizedBox(),
+            image != null ? Image.file(image!) :
+            Container( width: MediaQuery.of(context).size.width / 1.1,
+              height: context.screenheight/1.6,
+              color: Colors.grey,
+              child:
+              GestureDetector(
+                onTap: () {
+                  pickImage(ImageSource.camera);
+                },
+                  child: Icon(Icons.camera_alt,size: MediaQuery.of(context).size.width / 10,)
+              )
+              ,
+            ),
 
           ),
-          Positioned(
+          image != null ?  Positioned(
               left: 20,
               bottom: 40,
               child:
@@ -102,7 +114,8 @@ class _TimestampCameraPageState extends State<TimestampCameraPage> {
                   style: TextStyle(color: Colors.white, fontSize: 15),
                 ),
               )
-          ),
+          ) :
+          SizedBox.shrink(),
 
         ],
       )
