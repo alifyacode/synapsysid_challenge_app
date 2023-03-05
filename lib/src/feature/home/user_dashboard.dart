@@ -36,6 +36,12 @@ class _UserDashboardState extends State<UserDashboard> {
   }
 
   @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
 

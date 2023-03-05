@@ -180,7 +180,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
                                   )
                               )
                           ),
-                          onPressed: () => null
+                          onPressed: () => Navigator.of(context).popAndPushNamed('/gpscoordinate')
                       ),
                       SizedBox(height: 10,),
                       ElevatedButton(
