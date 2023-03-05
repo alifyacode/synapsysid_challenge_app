@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
-
-import '../../core/ui/styles/colors_app.dart';
-import '../../core/ui/widgets/back_arrow.dart';
+import 'dart:io';
+import 'package:device_info/device_info.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 
 class SensorPage extends StatefulWidget {
@@ -20,12 +22,35 @@ class _SensorPageState extends State<SensorPage> {
   static const int _snakeRows = 20;
   static const int _snakeColumns = 20;
   static const double _snakeCellSize = 10.0;
+  String deviceName ='';
 
   List<double>? _accelerometerValues;
   List<double>? _userAccelerometerValues;
   List<double>? _gyroscopeValues;
   List<double>? _magnetometerValues;
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
+
+  Future<void>_deviceDetails() async{
+    final DeviceInfoPlugin deviceInfoPlugin = new DeviceInfoPlugin();
+    try {
+      if (Platform.isAndroid) {
+        var build = await deviceInfoPlugin.androidInfo;
+        setState(() {
+          deviceName = build.model;
+
+        });
+        //UUID for Android
+      } else if (Platform.isIOS) {
+        var data = await deviceInfoPlugin.iosInfo;
+        setState(() {
+          deviceName = data.name;
+        });//UUID for iOS
+      }
+    } on PlatformException {
+      print('Failed to get platform version');
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +85,13 @@ class _SensorPageState extends State<SensorPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Accelerometer: $accelerometer'),
+                deviceName.isNotEmpty?
+
+                Text('Accelerometer: '
+                    '$deviceName, '
+                    '$accelerometer'):
+                Text('Accelerometer: $accelerometer')
+
               ],
             ),
           ),
@@ -69,6 +100,11 @@ class _SensorPageState extends State<SensorPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
+                deviceName.isNotEmpty?
+
+                Text('UserAccelerometer: '
+                    '$deviceName, '
+                    '$userAccelerometer'):
                 Text('UserAccelerometer: $userAccelerometer'),
               ],
             ),
@@ -78,7 +114,12 @@ class _SensorPageState extends State<SensorPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Gyroscope: $gyroscope'),
+                deviceName.isNotEmpty?
+
+                Text('Gyroscope: '
+                    '$deviceName, '
+                    '$gyroscope'):
+                Text('Gyroscope: $gyroscope')
               ],
             ),
           ),
@@ -87,7 +128,14 @@ class _SensorPageState extends State<SensorPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Magnetometer: $magnetometer'),
+                deviceName.isNotEmpty?
+            Text('Magnetometer: '
+                '$deviceName, '
+                '$magnetometer')
+                    :
+
+              Text('Magnetometer: '
+                    '$magnetometer'),
               ],
             ),
           ),
@@ -107,6 +155,8 @@ class _SensorPageState extends State<SensorPage> {
   @override
   void initState() {
     super.initState();
+    _deviceDetails();
+
     _streamSubscriptions.add(
       accelerometerEvents.listen(
             (AccelerometerEvent event) {

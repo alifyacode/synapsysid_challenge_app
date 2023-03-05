@@ -69,14 +69,37 @@ class _BatteryLevelPageState extends State<BatteryLevelPage> {
           width: 200,
           height: 200,
         );
-      case BatteryState.discharging:
 
-      default:
+      case BatteryState.discharging:
         return Container(
-          child: Icon(Icons.battery_alert, size: 200, color: Colors.grey),
+          child:
+          level==100?
+          Icon(
+            Icons.battery_full,
+            size: 200,
+            color: Colors.green,
+          ) :
+          level==0? Icon(
+            Icons.battery_alert,
+            size: 200,
+            color: Colors.red,
+          ) :
+          Icon(Icons.battery_full, size: 200, color: Colors.grey),
           width: 200,
           height: 200,
         );
+
+
+      case BatteryState.unknown:
+
+      default:
+        return Container(
+          child: Icon(Icons.battery_full, size: 200, color: Colors.grey),
+          width: 200,
+          height: 200,
+        );
+
+
     }
   }
 
