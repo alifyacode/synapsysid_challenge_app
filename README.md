@@ -55,5 +55,6 @@ Camera dengan stamp datetime
 ![Screenshot_1678027729](https://user-images.githubusercontent.com/82403145/222968301-efc58155-9229-48ef-93c0-12ca7f4a159d.png)
 ![Screenshot_1678027782](https://user-images.githubusercontent.com/82403145/222968305-a4751440-740c-4e58-b6c5-28b001153167.png)
 ![Screenshot_1678027794](https://user-images.githubusercontent.com/82403145/222968309-570eaa0a-4042-4cdb-8f8a-36312bbd1daf.png)
-![Screenshot_1678027798](https://user-images.githubusercontent.com/82403145/222968311-091740c4-5299-410d-9123-ff067e2197e3.png)
+![Screenshot_1678027798](https://user-images.githubusercontent.com/82403145/222968592-3494efce-c0a4-4de4-9ae3-8e6ec70a4994.png)
+
 
