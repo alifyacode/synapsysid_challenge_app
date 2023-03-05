@@ -43,7 +43,7 @@ class _SensorPageState extends State<SensorPage> {
       appBar: AppBar(
         leading:
         GestureDetector(
-          onTap: () => Navigator.of(context).pushReplacementNamed("/"),
+          onTap: () => Navigator.of(context).pushReplacementNamed("/deviceinfo"),
           child: Icon(
             Icons.arrow_back_ios,
             color: Colors.white,

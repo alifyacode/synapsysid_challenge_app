@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synapsysid_challenge_app/src/core/application_binding/application_binding.dart';
 import 'package:synapsysid_challenge_app/src/feature/Auth/auth_page.dart';
+import 'package:synapsysid_challenge_app/src/feature/DeviceInfo/sensor_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/Register/register_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/home/home_page.dart';
 import 'core/ui/theme/theme_config.dart';
@@ -21,7 +22,9 @@ class App extends StatelessWidget {
           '/':(context) => HomePage(),
           '/auth':(context) => AuthPage(),
           '/register':(context) => RegisterPage(),
-          '/deviceinfo':(context) => DeviceInfoPage()
+          '/deviceinfo':(context) => DeviceInfoPage(),
+          '/sensorstate':(context) => SensorPage()
+
         },
         theme: ThemeConfig.theme
       ),
