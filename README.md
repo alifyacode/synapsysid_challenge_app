@@ -3,7 +3,7 @@
 An application to complished the challenge from synapsysid
 
 ## NOTE:
-- Latest code is in SUBMISSION branch
+- Latest code is in ## SUBMISSION branch
 - This repo has included .apk, but if you can't find it, open project name->assets->apk file
 
 ## Run in:
