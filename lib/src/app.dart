@@ -11,6 +11,8 @@ import 'feature/DeviceInfo/battery_level_page.dart';
 import 'feature/DeviceInfo/device_info_page.dart';
 import 'feature/GPSMap/gps_map_page.dart';
 import 'feature/TimestampCamera/timestamp_camera_page.dart';
+import 'feature/UserProfile/user_profile_page.dart';
+import 'feature/home/home_controller.dart';
 
 
 class App extends StatelessWidget {
@@ -34,6 +36,8 @@ class App extends StatelessWidget {
           '/batterylevel':(context) => BatteryLevelPage(),
           '/timestampcamera':(context) => TimestampCameraPage(),
           '/appdevdetail':(context) => AppDevDetailPage(),
+          '/userprofile':(context) => UserProfilePage(user: (HomeController.userLogged)),
+
         },
         theme: ThemeConfig.theme
       ),
