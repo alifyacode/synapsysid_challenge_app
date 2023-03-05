@@ -1,147 +1,244 @@
 import 'dart:async';
-
+import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:sensors_plus/sensors_plus.dart';
+import 'package:intl/intl.dart';
+import 'package:synapsysid_challenge_app/src/core/ui/helpers/size_helpers.dart';
 
-import '../../core/ui/styles/colors_app.dart';
+
+
+import '../../core/ui/styles/text_styles.dart';
 import '../../core/ui/widgets/back_arrow.dart';
 
 
-class DeviceInfoPage extends StatefulWidget {
-  const DeviceInfoPage({Key? key, this.title}) : super(key: key);
 
-  final String? title;
+class DeviceInfoPage extends StatefulWidget {
+  const DeviceInfoPage({Key? key}) : super(key: key);
 
   @override
-  State<DeviceInfoPage> createState() => _DeviceInfoPageState();
+  _DeviceInfoPageState createState() => _DeviceInfoPageState();
 }
 
 class _DeviceInfoPageState extends State<DeviceInfoPage> {
-  static const int _snakeRows = 20;
-  static const int _snakeColumns = 20;
-  static const double _snakeCellSize = 10.0;
 
-  List<double>? _accelerometerValues;
-  List<double>? _userAccelerometerValues;
-  List<double>? _gyroscopeValues;
-  List<double>? _magnetometerValues;
-  final _streamSubscriptions = <StreamSubscription<dynamic>>[];
 
   @override
   Widget build(BuildContext context) {
-    final accelerometer =
-    _accelerometerValues?.map((double v) => v.toStringAsFixed(1)).toList();
-    final gyroscope =
-    _gyroscopeValues?.map((double v) => v.toStringAsFixed(1)).toList();
-    final userAccelerometer = _userAccelerometerValues
-        ?.map((double v) => v.toStringAsFixed(1))
-        .toList();
-    final magnetometer =
-    _magnetometerValues?.map((double v) => v.toStringAsFixed(1)).toList();
+    return SafeArea(
+      child: Scaffold(
 
-    return Scaffold(
-      appBar: AppBar(
-        leading:
-        GestureDetector(
-          onTap: () => Navigator.of(context).pushReplacementNamed("/"),
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
+        // appBar: AppBar(
+        //   elevation: 0.0,
+        //   leading: Container(
+        //     width: 100,
+        //       child: 
+        //       BackArrow(route: '/',color: Colors.white,)),
+        //   // title: Text('BelajarFlutter.com'),
+        // ),
+        body: Container(
+          height: context.screenheight ,
+          width: context.screenWidth,
+          child: Stack(
+            children: [
+              Positioned(
+                  top: 0,
+                  right: 0,
+                  left: 0,
+                  child:
+                  Column(
+                    children: [
+                      Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: const BackArrow(route: '/',color: Colors.white),
+                          ),
+                        color: Color(
+                            0xff7c59c3),
+                      ),
+
+                      Container(
+                        height: context.screenheight /8 ,
+                        width: context.screenWidth*2,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: Image.asset("assets/images/wave.png").image,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+              ),
+              Positioned(
+                  top: 150,
+                  left: 10,
+                  child:
+                  Container(
+                    width: context.screenWidth,
+                    child: Text("Device Info",textAlign: TextAlign.start,
+                        style: TextStyles.instance.textBold.copyWith(fontSize: 35,)),
+                  )
+              ),
+
+              Positioned(
+                  top: 170,
+                  right: 0,
+                  left: 0,
+                  child:
+                  Column(
+                    children: [
+                      SizedBox(height: 40,),
+                      ElevatedButton(
+                          child: Container(
+                            height: context.screenheight/5 ,
+                            width: context.screenWidth-50,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 10,),
+
+                                Container(
+                                  height: context.screenheight/10 ,
+                                  width: context.screenWidth/5,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: Image.asset("assets/images/loginregister.png").image,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    SizedBox(width: 8,),
+
+                                    Text(
+                                        "GPS Map".toUpperCase(),
+                                        style: TextStyle(fontSize: 14)
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 30,),
+
+                              ],
+                            ),
+                          ),
+                          style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(
+                                  0xff7c59c3)),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  )
+                              )
+                          ),
+                          onPressed: () => null
+                      ),
+                      SizedBox(height: 10,),
+                      ElevatedButton(
+                          child: Container(
+                            height: context.screenheight/5 ,
+                            width: context.screenWidth-50,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 10,),
+
+                                Container(
+                                  height: context.screenheight/10 ,
+                                  width: context.screenWidth/5,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: Image.asset("assets/images/loginregister.png").image,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    SizedBox(width: 8,),
+
+                                    Text(
+                                        "GPS Map".toUpperCase(),
+                                        style: TextStyle(fontSize: 14)
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 30,),
+
+                              ],
+                            ),
+                          ),
+                          style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(
+                                  0xff7c59c3)),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  )
+                              )
+                          ),
+                          onPressed: () => null
+                      ),
+                      SizedBox(height: 10,),
+                      ElevatedButton(
+                          child: Container(
+                            height: context.screenheight/5 ,
+                            width: context.screenWidth-50,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 10,),
+
+                                Container(
+                                  height: context.screenheight/10 ,
+                                  width: context.screenWidth/5,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: Image.asset("assets/images/loginregister.png").image,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    SizedBox(width: 8,),
+
+                                    Text(
+                                        "GPS Map".toUpperCase(),
+                                        style: TextStyle(fontSize: 14)
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 30,),
+
+                              ],
+                            ),
+                          ),
+                          style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(
+                                  0xff7c59c3)),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  )
+                              )
+                          ),
+                          onPressed: () => null
+                      ),
+                      SizedBox(height: 40,),
+
+                    ],
+                  )
+              ),
+
+            ],
           ),
         ),
-
-        title: const Text('Device Info'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text('Accelerometer: $accelerometer'),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text('UserAccelerometer: $userAccelerometer'),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text('Gyroscope: $gyroscope'),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text('Magnetometer: $magnetometer'),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    for (final subscription in _streamSubscriptions) {
-      subscription.cancel();
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _streamSubscriptions.add(
-      accelerometerEvents.listen(
-            (AccelerometerEvent event) {
-          setState(() {
-            _accelerometerValues = <double>[event.x, event.y, event.z];
-          });
-        },
-      ),
-    );
-    _streamSubscriptions.add(
-      gyroscopeEvents.listen(
-            (GyroscopeEvent event) {
-          setState(() {
-            _gyroscopeValues = <double>[event.x, event.y, event.z];
-          });
-        },
-      ),
-    );
-    _streamSubscriptions.add(
-      userAccelerometerEvents.listen(
-            (UserAccelerometerEvent event) {
-          setState(() {
-            _userAccelerometerValues = <double>[event.x, event.y, event.z];
-          });
-        },
-      ),
-    );
-    _streamSubscriptions.add(
-      magnetometerEvents.listen(
-            (MagnetometerEvent event) {
-          setState(() {
-            _magnetometerValues = <double>[event.x, event.y, event.z];
-          });
-        },
-      ),
-    );
-  }
+    );  }
 }

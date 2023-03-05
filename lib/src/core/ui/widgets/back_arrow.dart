@@ -5,7 +5,8 @@ import '../styles/text_styles.dart';
 
 class BackArrow extends StatelessWidget {
   final String route;
-  const BackArrow({ Key? key, required this.route }) : super(key: key);
+  final Color? color;
+  const BackArrow({ Key? key, required this.route,this.color }) : super(key: key);
 
    @override
    Widget build(BuildContext context) {
@@ -16,12 +17,12 @@ class BackArrow extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.arrow_back_ios,
-                    color: ColorsApp.instance.grey,
+                    color: color??ColorsApp.instance.grey,
                   ),
                   Expanded(
                       child: Text(
                     'Back',
-                    style: TextStyles.instance.textBold.copyWith(fontSize: 15,color: ColorsApp.instance.grey),
+                    style: TextStyles.instance.textBold.copyWith(fontSize: 15,color: color??ColorsApp.instance.grey),
                   ))
                 ],
               ),
