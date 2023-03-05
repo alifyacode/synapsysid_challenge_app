@@ -1,19 +1,10 @@
 # synapsysid_challenge_app
 
-A new Flutter project.
+An application to complished the challenge from synapsysid
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## NOTE:
+- Latest code is in SUBMISSION branch
+- This repo has included .apk, but if you can't find it, open project name->assets->apk file
 
 ## Run in:
 Flutter 3.7.6 • channel stable • https://github.com/flutter/flutter.git
@@ -56,5 +47,4 @@ Camera dengan stamp datetime
 ![Screenshot_1678027782](https://user-images.githubusercontent.com/82403145/222968305-a4751440-740c-4e58-b6c5-28b001153167.png)
 ![Screenshot_1678027794](https://user-images.githubusercontent.com/82403145/222968309-570eaa0a-4042-4cdb-8f8a-36312bbd1daf.png)
 ![Screenshot_1678027798](https://user-images.githubusercontent.com/82403145/222968592-3494efce-c0a4-4de4-9ae3-8e6ec70a4994.png)
-
 
