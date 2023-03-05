@@ -112,7 +112,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
                                     SizedBox(width: 8,),
 
                                     Text(
-                                        "GPS Map".toUpperCase(),
+                                        "Sensor states".toUpperCase(),
                                         style: TextStyle(fontSize: 14)
                                     ),
                                   ],
@@ -160,7 +160,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
                                     SizedBox(width: 8,),
 
                                     Text(
-                                        "GPS Map".toUpperCase(),
+                                        "GPS Coordinate".toUpperCase(),
                                         style: TextStyle(fontSize: 14)
                                     ),
                                   ],
@@ -208,7 +208,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
                                     SizedBox(width: 8,),
 
                                     Text(
-                                        "GPS Map".toUpperCase(),
+                                        "Battery Level".toUpperCase(),
                                         style: TextStyle(fontSize: 14)
                                     ),
                                   ],
