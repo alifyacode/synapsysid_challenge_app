@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:synapsysid_challenge_app/src/core/application_binding/application_binding.dart';
+import 'package:synapsysid_challenge_app/src/feature/AppDevDetails/app_dev_detail_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/Auth/auth_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/DeviceInfo/gps_coordinate_page.dart';
 import 'package:synapsysid_challenge_app/src/feature/DeviceInfo/sensor_page.dart';
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
           '/gpsmap':(context) => GpsMapPage(),
           '/batterylevel':(context) => BatteryLevelPage(),
           '/timestampcamera':(context) => TimestampCameraPage(),
+          '/appdevdetail':(context) => AppDevDetailPage(),
         },
         theme: ThemeConfig.theme
       ),

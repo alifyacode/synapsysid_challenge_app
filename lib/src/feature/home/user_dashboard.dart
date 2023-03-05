@@ -52,7 +52,7 @@ class _UserDashboardState extends State<UserDashboard> {
         leading: Icon(Icons.more_vert),
         // title: Text('BelajarFlutter.com'),
         actions: <Widget>[
-          IconButton(icon: new Icon(Icons.info_rounded, color: Colors.white), onPressed: () {  },),
+          IconButton(icon: new Icon(Icons.info_rounded, color: Colors.white), onPressed: () {Navigator.of(context).popAndPushNamed('/appdevdetail');  },),
         ],
       ),
       body: Container(

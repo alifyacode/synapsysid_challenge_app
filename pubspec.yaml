@@ -58,6 +58,7 @@ dependencies:
   stamp_image: ^0.0.2
   image_picker: ^0.8.6+4
   camera: ^0.10.3+2
+  package_info_plus: ^1.0.2
 
 dev_dependencies:
   flutter_test:
