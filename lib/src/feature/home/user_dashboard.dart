@@ -231,13 +231,14 @@ class _UserDashboardState extends State<UserDashboard> {
                             style: ButtonStyle(
                                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                                 backgroundColor: MaterialStateProperty.all<Color>(Color(
-                                    0xff7c59c3)),                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    0xff7c59c3)),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(5.0),
                                     )
                                 )
                             ),
-                            onPressed: () => null
+                            onPressed: () => Navigator.of(context).popAndPushNamed('/timestampcamera')
                         ),
 
                       ],

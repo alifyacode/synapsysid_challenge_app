@@ -6,6 +6,10 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Synapsysid Challenge App</string>
+	<key>NSCameraUsageDescription</key>
+    <string>This app needs access to camera when in the background.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>This app needs access to microphone when in the background.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
